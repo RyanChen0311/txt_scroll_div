@@ -3,46 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>閱讀器</title>
+    <title>文件閱讀器</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="success-message"></div>
-        <!-- 控制面板 -->
         <div class="controls">
-            <div class="file-upload-container">
-                <input type="file" id="fileInput" accept=".txt" style="display: none;">
-                <label for="fileInput" class="file-upload-label">選擇文件</label>
-                <div id="fileName" class="file-name"></div>
+            <div class="file-upload">
+                <label for="fileInput" class="upload-label">
+                    <span class="upload-icon">📄</span>
+                    <span class="upload-text">選擇文件</span>
+                </label>
+                <input type="file" id="fileInput" accept=".txt">
             </div>
             <div class="settings">
-                <div class="setting-group">
-                    <label for="wordsPerSection">每頁字數：</label>
-                    <input type="number" id="wordsPerSection" value="500" min="100">
-                    <span class="min-words">(最少100字)</span>
-                </div>
+                <label for="wordsPerSection">每頁字數：</label>
+                <input type="number" id="wordsPerSection" value="500" min="100" max="2000">
             </div>
-            <div class="page-info">
-                <span id="windowInfo">第 0 頁 / 共 0 頁</span>
-                <span id="wordCountInfo">當前字數：0</span>
-            </div>
-            <div class="navigation-buttons">
-                <button id="prevPage" class="nav-button">上一頁</button>
-                <button id="nextPage" class="nav-button">下一頁</button>
+            <div class="page-info">0 / 0 頁</div>
+            <div class="navigation">
+                <button id="prevPage" disabled>上一頁</button>
+                <button id="nextPage" disabled>下一頁</button>
             </div>
             <div class="page-jump">
-                <select id="jumpToPage" class="page-select">
-                    <option value="">選擇頁數</option>
-                </select>
-                <button id="jumpButton" class="jump-button">跳轉</button>
+                <input type="number" id="jumpToPage" placeholder="頁碼" min="1">
+                <button id="jumpButton">跳轉</button>
             </div>
         </div>
-
-        <!-- 顯示區域 -->
-        <div class="window">
-            <div class="window-content"></div>
-        </div>
+        <div class="windows-container"></div>
+        <div class="success-message"></div>
     </div>
     <script src="script.js"></script>
 </body>
