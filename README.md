@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-👉 https://ryanche n0311.github.io/txt_scroll_div/
+👉 https://ryanchen0311.github.io/txt_scroll_div/
 
 ---
 
